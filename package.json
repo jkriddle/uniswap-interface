@@ -159,5 +159,7 @@
     ]
   },
   "license": "GPL-3.0-or-later",
-  "dependencies": {}
+  "dependencies": {
+    "yarn": "^1.22.10"
+  }
 }
