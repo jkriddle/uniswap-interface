@@ -165,7 +165,7 @@ function CurrentPriceCard({
           <Trans>Current price</Trans>
         </ExtentsText>
         <TYPE.mediumHeader textAlign="center">
-          {(inverted ? pool.token1Price : pool.token0Price).toSignificant(6)}{' '}
+          <div id="current-price">{(inverted ? pool.token1Price : pool.token0Price).toSignificant(6)}{' '}</div>
         </TYPE.mediumHeader>
         <ExtentsText>
           <Trans>
@@ -647,11 +647,11 @@ export function PositionPage({
                     </Label>
 		      {fiatValueOfLiquidity?.greaterThan(new Fraction(1, 100)) ? (
                       <TYPE.largeHeader fontSize="36px" fontWeight={500}>
-                        <div id="fee-total"><Trans>${fiatValueOfLiquidity.toFixed(2, { groupSeparator: ',' })}</Trans></div>
+                        <div id="liquidity-total"><Trans>${fiatValueOfLiquidity.toFixed(2, { groupSeparator: ',' })}</Trans></div>
                       </TYPE.largeHeader>
                     ) : (
                       <TYPE.largeHeader color={theme.text1} fontSize="36px" fontWeight={500}>
-                        <div id="fee-total"><Trans>$-</Trans></div>
+                        <div id="liquidity-total"><Trans>$-</Trans></div>
                       </TYPE.largeHeader>
                     )}
                   </AutoColumn>
@@ -857,7 +857,7 @@ export function PositionPage({
                     <ExtentsText>
                       {' '}
                       <Trans>
-                        <div id="current-price">{currencyQuote?.symbol} per {currencyBase?.symbol}</div>
+                        <div>{currencyQuote?.symbol} per {currencyBase?.symbol}</div>
                       </Trans>
                     </ExtentsText>
 
